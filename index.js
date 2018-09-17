@@ -11,6 +11,10 @@ io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
   });
+
+  socket.on('new join', function(msg) {
+    io.emit('new join', msg);
+  });
 });
 
 http.listen(port, function(){
