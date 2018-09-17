@@ -15,6 +15,10 @@ io.on('connection', function(socket){
   socket.on('new join', function(msg) {
     io.emit('new join', msg);
   });
+
+  socket.on('response online', function(msg) {
+    io.emit('response online', msg);
+  })
 });
 
 http.listen(port, function(){
